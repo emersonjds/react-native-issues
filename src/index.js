@@ -1,8 +1,8 @@
-import React from "react";
-import "~/config/ReactotronConfig";
-import "~/config/DevToolsConfig";
+import React from 'react';
+import './config/DevToolsConfig';
+import './config/ReactotronConfig';
 
-import Routes from "./routes";
+import Routes from './routes';
 
 const App = () => <Routes />;
 

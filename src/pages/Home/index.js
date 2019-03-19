@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import {
   View,
@@ -10,19 +10,19 @@ import {
   Text,
   AsyncStorage,
   TouchableOpacity
-} from "react-native";
+} from 'react-native';
 
-import api from "~/services/api";
+import api from '~/services/api';
 
-import Icon from "react-native-vector-icons/FontAwesome";
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-import RepositoryItem from "./components/RepositoryItem";
+import RepositoryItem from './components/RepositoryItem';
 
-import styles from "./styles";
+import styles from './styles';
 
 export default class Home extends Component {
   static navigationOptions = {
-    title: "GitIssues"
+    title: 'GitIssues'
   };
 
   static propTypes = {
@@ -32,11 +32,11 @@ export default class Home extends Component {
   };
 
   state = {
-    repositoryInput: "",
+    repositoryInput: ',
     repositories: [],
     loadingList: true,
     loadingButton: false,
-    error: "",
+    error: ',
     refreshing: false
   };
 
@@ -48,7 +48,7 @@ export default class Home extends Component {
     this.setState({ refreshing: true });
 
     const repositories = JSON.parse(
-      await AsyncStorage.getItem("@GitIssues:repositories")
+      await AsyncStorage.getItem('@GitIssues:repositories')
     );
 
     this.setState({
@@ -86,7 +86,7 @@ export default class Home extends Component {
 
     if (!repositoryInput) {
       this.setState({
-        error: "Preencha o repositório para continuar",
+        error: 'Preencha o repositório para continuar',
         loadingButton: false
       });
       return;
@@ -95,7 +95,7 @@ export default class Home extends Component {
     if (
       repositories.find(repository => repository.full_name === repositoryInput)
     ) {
-      this.setState({ error: "Repositório duplicado", loadingButton: false });
+      this.setState({ error: 'Repositório duplicado', loadingButton: false });
       return;
     }
 
@@ -103,17 +103,17 @@ export default class Home extends Component {
       const { data } = await api.get(`/repos/${repositoryInput}`);
 
       this.setState({
-        repositoryInput: "",
-        error: "",
+        repositoryInput: ',
+        error: ',
         repositories: [...repositories, data]
       });
 
       await AsyncStorage.setItem(
-        "@GitIssues:repositories",
+        '@GitIssues:repositories',
         JSON.stringify([...repositories, data])
       );
     } catch (_err) {
-      this.setState({ repositoryInput: "", error: "Repositório inexistente" });
+      this.setState({ repositoryInput: ', error: 'Repositório inexistente' });
     } finally {
       this.setState({ loadingButton: false });
     }
@@ -123,13 +123,13 @@ export default class Home extends Component {
     const { repositoryInput, loadingList, loadingButton, error } = this.state;
     return (
       <View style={styles.container}>
-        <StatusBar barStyle="dark-content" />
+        <StatusBar barStyle='dark-content' />
         <View style={styles.form}>
           <View style={styles.inputContainer}>
             <TextInput
-              autoCapitalize="none"
+              autoCapitalize='none'
               autoCorrect={false}
-              placeholder="Adicionar novo repositório"
+              placeholder='Adicionar novo repositório'
               style={styles.formInput}
               placeholderTextColor={styles.placeholderColor.color}
               value={repositoryInput}
@@ -137,16 +137,16 @@ export default class Home extends Component {
             />
             <TouchableOpacity onPress={this.addRepository}>
               {loadingButton ? (
-                <ActivityIndicator size="small" style={styles.formLoading} />
+                <ActivityIndicator size='small' style={styles.formLoading} />
               ) : (
-                <Icon name="plus" size={20} style={styles.formIcon} />
+                <Icon name='plus' size={20} style={styles.formIcon} />
               )}
             </TouchableOpacity>
           </View>
           {!!error && <Text style={styles.error}>{error}</Text>}
         </View>
         {loadingList ? (
-          <ActivityIndicator size="large" style={styles.loading} />
+          <ActivityIndicator size='large' style={styles.loading} />
         ) : (
           this.renderList()
         )}

@@ -5,21 +5,31 @@
     "es6": true,
     "jest": true
   },
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "airbnb-base"
+  ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly",
-    "__DEV__": true
+    "__DEV__": true,
+    "fetch": false
   },
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "modules": true
     },
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
   "plugins": ["react", "react-native", "jsx-a11y", "import"],
   "rules": {
+    "no-use-before-define": "off",
+    "react/prop-types": "off",
+    "comma-dangle": "off",
     "react/jsx-filename-extension": [
       "error",
       { "extensions": [".js", ".jsx"] }

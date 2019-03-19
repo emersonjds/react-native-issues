@@ -1,1 +1,1 @@
-import { createAppContainer, createStackNavigator } from "react-navigation";
+import { createAppContainer, createStackNavigator } from 'react-navigation';
