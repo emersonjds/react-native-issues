@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
-import { colors, metrics } from "~/styles";
+import { StyleSheet } from 'react-native';
+import { colors, metrics } from '../../styles';
 
 const styles = StyleSheet.create({
   container: {
@@ -9,14 +9,14 @@ const styles = StyleSheet.create({
   empty: {
     color: colors.dark,
     marginTop: metrics.baseMargin * 2,
-    textAlign: "center"
+    textAlign: 'center'
   },
   error: {
     color: colors.danger,
     fontSize: 12,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginTop: metrics.basePadding,
-    textAlign: "center"
+    textAlign: 'center'
   },
   form: {
     color: colors.dark

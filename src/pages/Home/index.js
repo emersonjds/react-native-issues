@@ -12,11 +12,10 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import api from '~/services/api';
-
 import Icon from 'react-native-vector-icons/FontAwesome';
-
 import RepositoryItem from './components/RepositoryItem';
+
+import api from '../../services/api';
 
 import styles from './styles';
 
@@ -32,11 +31,11 @@ export default class Home extends Component {
   };
 
   state = {
-    repositoryInput: ',
+    repositoryInput: '',
     repositories: [],
     loadingList: true,
     loadingButton: false,
-    error: ',
+    error: '',
     refreshing: false
   };
 
@@ -103,8 +102,8 @@ export default class Home extends Component {
       const { data } = await api.get(`/repos/${repositoryInput}`);
 
       this.setState({
-        repositoryInput: ',
-        error: ',
+        repositoryInput: '',
+        error: '',
         repositories: [...repositories, data]
       });
 
@@ -113,7 +112,7 @@ export default class Home extends Component {
         JSON.stringify([...repositories, data])
       );
     } catch (_err) {
-      this.setState({ repositoryInput: ', error: 'Repositório inexistente' });
+      this.setState({ repositoryInput: '', error: 'Repositório inexistente' });
     } finally {
       this.setState({ loadingButton: false });
     }
