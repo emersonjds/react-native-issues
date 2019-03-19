@@ -7,15 +7,31 @@
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "prop-types": "^15.7.2",
     "react": "16.8.3",
-    "react-native": "0.59.1"
+    "react-native": "0.59.1",
+    "react-native-gesture-handler": "^1.1.0",
+    "react-native-status-bar-height": "^2.3.1",
+    "react-native-vector-icons": "^6.4.1",
+    "react-navigation": "^3.5.0",
+    "reactotron-react-native": "^3.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/runtime": "^7.4.0",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^24.5.0",
+    "babel-plugin-root-import": "^6.1.0",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-native": "^3.6.0",
     "jest": "^24.5.0",
     "metro-react-native-babel-preset": "^0.53.1",
+    "react-dev-tools": "^0.0.1",
     "react-test-renderer": "16.8.3"
   },
   "jest": {
