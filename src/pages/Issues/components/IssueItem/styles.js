@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
   },
 
   avatar: {
+    borderRadius: 25,
     height: 50,
     width: 50
   },
@@ -23,7 +24,8 @@ const styles = StyleSheet.create({
   },
 
   icon: {
-    color: colors.light
+    color: colors.light,
+    marginLeft: metrics.baseMargin
   },
 
   infoContainer: {
