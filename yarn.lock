@@ -795,8 +795,8 @@
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-1.1.0.tgz#2cc2ca41051498382b43157c8227fea60363f94a"
 
 "@types/node@*":
-  version "11.11.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.11.3.tgz#7c6b0f8eaf16ae530795de2ad1b85d34bf2f5c58"
+  version "11.11.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.11.4.tgz#8808bd5a82bbf6f5d412eff1c228d178e7c24bb3"
 
 "@types/node@^8.0.24":
   version "8.10.44"
@@ -5211,8 +5211,8 @@ react-navigation-tabs@1.0.2:
     react-native-tab-view "^1.0.0"
 
 react-navigation@^3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-3.5.0.tgz#f789c282b56f9864c4ca9b82a85bdabd058db44e"
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-3.5.1.tgz#73e6f71f89d428e3567fbc5241e935bfaff6b62a"
   dependencies:
     "@react-navigation/core" "3.2.0"
     "@react-navigation/native" "~3.3.0"

@@ -25,13 +25,16 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     borderRadius: metrics.baseRadius,
     color: colors.darker,
-    flex: 1,
+    width: '90%',
     fontSize: 14,
     marginRight: metrics.baseMargin,
     padding: metrics.basePadding / 2
   },
   inputContainer: {
-    padding: metrics.basePadding
+    padding: metrics.basePadding,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   },
   placeholderColor: {
     color: colors.regular
